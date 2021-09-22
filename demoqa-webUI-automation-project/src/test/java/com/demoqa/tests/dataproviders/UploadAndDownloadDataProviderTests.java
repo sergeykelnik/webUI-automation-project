@@ -6,7 +6,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class UploadAndDownloadDataProviderTests extends BaseTests {
-    //You might have to change this part C:\\Users\\Natasha.Kostovska\\IdeaProjects\\demoqa-webUI-automation-project\\ of the path depending where the project is downloaded.
+    //You might need to change this part C:\\Users\\Natasha.Kostovska\\IdeaProjects\\demoqa-webUI-automation-project\\ of the path depending on where the project is downloaded.
     @DataProvider(name="Upload files")
     public static Object [][] dataProvider(){
         return new Object[][]{
