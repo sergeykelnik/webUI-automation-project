@@ -10,10 +10,10 @@ public class UploadAndDownloadDataProviderTests extends BaseTests {
     public static Object [][] dataProvider(){
         return new Object[][]{
                 {"C:\\Users\\Natasha.Kostovska\\IdeaProjects\\demoqa-webUI-automation-project\\src\\test\\resources\\filesforupload\\Nate.docx"},
-                {"C:\\Users\\Natasha.Kostovska\\Documents\\Nate.pdf"},
-                {"C:\\Users\\Natasha.Kostovska\\Downloads\\Response_codes_TestingREST7.png"},
-                {"C:\\Users\\Natasha.Kostovska\\Downloads\\minion.jpg"},
-                {"C:\\Users\\Natasha.Kostovska\\Downloads\\Postman-win64-8.8.0-Setup.exe"}
+                {"C:\\Users\\Natasha.Kostovska\\IdeaProjects\\demoqa-webUI-automation-project\\src\\test\\resources\\filesforupload\\Nate.pdf"},
+                {"C:\\Users\\Natasha.Kostovska\\IdeaProjects\\demoqa-webUI-automation-project\\src\\test\\resources\\filesforupload\\Response_codes_TestingREST7.png"},
+                {"C:\\Users\\Natasha.Kostovska\\IdeaProjects\\demoqa-webUI-automation-project\\src\\test\\resources\\filesforupload\\minion.jpg"},
+                {"C:\\Users\\Natasha.Kostovska\\IdeaProjects\\demoqa-webUI-automation-project\\src\\test\\resources\\filesforupload\\Postman-win64-8.8.0-Setup.exe"}
 
         };
     }
