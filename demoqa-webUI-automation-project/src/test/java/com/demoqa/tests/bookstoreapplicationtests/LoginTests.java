@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 public class LoginTests extends BaseTests {
     @Test
-    public void loginPageTest(){ //how to verify Captcha
+    public void loginPageTest(){ 
         homePage.chooseHomePageMenu("Book Store");
         bookStorePage.chooseBookStoreMenu("Login");
         Assert.assertEquals(loginPage.getWelcomeText(),"Welcome,\nLogin in Book Store");
