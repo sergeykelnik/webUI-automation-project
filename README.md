@@ -17,7 +17,7 @@ Click Help > About Chrome/ About Firefox/ About Microsoft Edge.
 ## 
 Or as a second option, in order to save time you can add the WebDriverManager Dependency in the pom.xml file: https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager
 
-In the framework-> Browser.java class of the project erase System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe"); and replace accordingly: 
+In the framework-> Browser.java class of the project erase System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/the specified driver"); and replace accordingly: 
 
 1. WebDriverManager.chromedriver().setup();
 2. WebDriverManager.firefoxdriver().setup();
