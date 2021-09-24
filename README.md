@@ -1,6 +1,16 @@
 # demoqa-webUI-automation-project
 
-## Automation testing on demoqa.com page
+## Automation testing on demoqa.com page (Page Object Model)
+
+## Technologies/Tools used:
+
+1. Java
+2. Maven
+3. TestNG
+4. Selenium WebDriver
+5. IntelliJ
+6. Java Faker
+7. AutoIT
 
 ##
 In order the tests to start, you will have to download drivers accordingly to the versions of your web browers in the resources->drivers directory.
