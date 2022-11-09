@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Alerts Test">
+    <listeners>
+        <listener class-name="com.demoqa.framework.AnnotationTransformer"/>
+    </listeners>
     <test name="Alerts">
         <classes>
             <class name="com.demoqa.tests.alertframeandwindowstests.BrowserWindowsTests">
