@@ -20,7 +20,7 @@ public class SortablePage extends Methods {
     public void chooseInteractionsMenu(String interactionsMenuList) {
         int i = arrayListToInt(StaticVariables.INTERACTIONS_MENU, interactionsMenuList);
         javaExecutorScrollIntoView(interactionsMenu);
-        clickActionsWithIndex(interactionsMenu, i);
+        clickWithIndex(interactionsMenu, i);
     }
 
     public void clickListOrGrid(String chooseListOrGrid) {

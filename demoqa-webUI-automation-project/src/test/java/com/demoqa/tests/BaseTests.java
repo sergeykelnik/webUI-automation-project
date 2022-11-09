@@ -2,32 +2,32 @@ package com.demoqa.tests;
 
 import com.demoqa.framework.Browsers;
 import com.demoqa.methods.Methods;
+import com.demoqa.pages.HomePage;
 import com.demoqa.pages.alertframeandwindows.*;
 import com.demoqa.pages.bookstoreapplication.BookStorePage;
-import com.demoqa.pages.HomePage;
 import com.demoqa.pages.bookstoreapplication.LoginPage;
 import com.demoqa.pages.bookstoreapplication.ProfilePage;
 import com.demoqa.pages.elements.*;
 import com.demoqa.pages.forms.PracticeFormPage;
 import com.demoqa.pages.interactions.*;
-import com.demoqa.pages.loader.LoaderPage;
 import com.demoqa.pages.widgets.*;
 import com.github.javafaker.Faker;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import java.time.Duration;
 import java.util.Locale;
 
 public class BaseTests {
 
-    public WebDriver driver;
-    public WebDriverWait wait;
+    private WebDriver driver;
+    private WebDriverWait wait;
 
     public static final String URL = "https://demoqa.com/";
-    public static final String URL1="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader5";
 
     Browsers browsers = new Browsers();
 
@@ -65,29 +65,27 @@ public class BaseTests {
     public DroppablePage droppablePage;
     public DraggablePage draggablePage;
     public Methods methods;
-    public LoaderPage loaderPage;
 
     public Faker ukFaker;
     public Faker faker;
     Actions actions;
 
     public void waitTime() {
-        try {
-            Thread.sleep(5000);
+        /*try {
+            Thread.sleep(1000);
         } catch (Exception e) {
-        }
+        }*/
     }
 
     @BeforeMethod
     public void setup() {
         driver = browsers.openWithSwitch("chrome");
-        driver.navigate().to(URL);
-
-        driver.manage().window().maximize();
-        wait = new WebDriverWait(driver, 20);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.manage().window().setSize(new Dimension(2560, 1440));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         actions = new Actions(driver);
-        ukFaker=new Faker(new Locale("en-GB"));
-        faker=new Faker();
+        ukFaker = new Faker(new Locale("en-GB"));
+        faker = new Faker();
 
         homePage = new HomePage(driver, wait, actions);
         buttonsPage = new ButtonsPage(driver, wait, actions);
@@ -98,39 +96,40 @@ public class BaseTests {
         bookStorePage = new BookStorePage(driver, wait, actions);
         brokenLinks = new BrokenLinks(driver, wait, actions);
         uploadAndDownloadPage = new UploadAndDownloadPage(driver, wait, actions);
-        dynamicPropertiesPage=new DynamicPropertiesPage(driver,wait,actions);
-        practiceFormPage=new PracticeFormPage(driver,wait,actions);
-        textBoxPage=new TextBoxPage(driver,wait,actions);
-        webTablesPage=new WebTablesPage(driver,wait,actions);
-        alertsPage=new AlertsPage(driver,wait,actions);
-        framesPage=new FramesPage(driver,wait,actions);
-        nestedFramesPage=new NestedFramesPage(driver,wait,actions);
-        modalDialogsPage=new ModalDialogsPage(driver,wait,actions);
-        sortablePage=new SortablePage(driver,wait,actions);
-        accordianPage=new AccordianPage(driver,wait,actions);
-        autoCompletePage=new AutoCompletePage(driver,wait,actions);
-        datePickerPage=new DatePickerPage(driver,wait,actions);
-        sliderPage=new SliderPage(driver,wait,actions);
-        progressBarPage=new ProgressBarPage(driver,wait,actions);
-        tabsPage=new TabsPage(driver,wait,actions);
-        toolTipsPage=new ToolTipsPage(driver,wait,actions);
-        menuPage=new MenuPage(driver,wait,actions);
-        selectMenuPage=new SelectMenuPage(driver,wait,actions);
-        loginPage=new LoginPage(driver,wait,actions);
-        profilePage=new ProfilePage(driver,wait,actions);
-        selectablePage=new SelectablePage(driver,wait,actions);
-        resizablePage=new ResizablePage(driver,wait,actions);
-        droppablePage=new DroppablePage(driver,wait,actions);
-        draggablePage=new DraggablePage(driver,wait,actions);
-        methods=new Methods(driver,wait,actions);
-        loaderPage=new LoaderPage(driver,wait,actions);
-        buttonsPage.clickXAd();
+        dynamicPropertiesPage = new DynamicPropertiesPage(driver, wait, actions);
+        practiceFormPage = new PracticeFormPage(driver, wait, actions);
+        textBoxPage = new TextBoxPage(driver, wait, actions);
+        webTablesPage = new WebTablesPage(driver, wait, actions);
+        alertsPage = new AlertsPage(driver, wait, actions);
+        framesPage = new FramesPage(driver, wait, actions);
+        nestedFramesPage = new NestedFramesPage(driver, wait, actions);
+        modalDialogsPage = new ModalDialogsPage(driver, wait, actions);
+        sortablePage = new SortablePage(driver, wait, actions);
+        accordianPage = new AccordianPage(driver, wait, actions);
+        autoCompletePage = new AutoCompletePage(driver, wait, actions);
+        datePickerPage = new DatePickerPage(driver, wait, actions);
+        sliderPage = new SliderPage(driver, wait, actions);
+        progressBarPage = new ProgressBarPage(driver, wait, actions);
+        tabsPage = new TabsPage(driver, wait, actions);
+        toolTipsPage = new ToolTipsPage(driver, wait, actions);
+        menuPage = new MenuPage(driver, wait, actions);
+        selectMenuPage = new SelectMenuPage(driver, wait, actions);
+        loginPage = new LoginPage(driver, wait, actions);
+        profilePage = new ProfilePage(driver, wait, actions);
+        selectablePage = new SelectablePage(driver, wait, actions);
+        resizablePage = new ResizablePage(driver, wait, actions);
+        droppablePage = new DroppablePage(driver, wait, actions);
+        draggablePage = new DraggablePage(driver, wait, actions);
+        methods = new Methods(driver, wait, actions);
         waitTime();
+        driver.get(URL);
     }
 
     @AfterMethod
     public void tear_down() {
         waitTime();
-        driver.quit();
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }

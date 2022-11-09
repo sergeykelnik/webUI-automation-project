@@ -10,11 +10,11 @@ public class UploadAndDownloadDataProviderTests extends BaseTests {
     @DataProvider(name="Upload files")
     public static Object [][] dataProvider(){
         return new Object[][]{
-                {"C:\\Users\\Natasha.Kostovska\\IdeaProjects\\demoqa-webUI-automation-project\\src\\test\\resources\\filesforupload\\Nate.docx"},
-                {"C:\\Users\\Natasha.Kostovska\\IdeaProjects\\demoqa-webUI-automation-project\\src\\test\\resources\\filesforupload\\Nate.pdf"},
-                {"C:\\Users\\Natasha.Kostovska\\IdeaProjects\\demoqa-webUI-automation-project\\src\\test\\resources\\filesforupload\\Response_codes_TestingREST7.png"},
-                {"C:\\Users\\Natasha.Kostovska\\IdeaProjects\\demoqa-webUI-automation-project\\src\\test\\resources\\filesforupload\\minion.jpg"},
-                {"C:\\Users\\Natasha.Kostovska\\IdeaProjects\\demoqa-webUI-automation-project\\src\\test\\resources\\filesforupload\\Postman-win64-8.8.0-Setup.exe"}
+                {"D:\\Repositories\\webUI-automation-project\\demoqa-webUI-automation-project\\src\\test\\resources\\filesforupload\\Nate.docx"},
+                {"D:\\Repositories\\webUI-automation-project\\demoqa-webUI-automation-project\\src\\test\\resources\\filesforupload\\Nate.pdf"},
+                {"D:\\Repositories\\webUI-automation-project\\demoqa-webUI-automation-project\\src\\test\\resources\\filesforupload\\Response_codes_TestingREST7.png"},
+                {"D:\\Repositories\\webUI-automation-project\\demoqa-webUI-automation-project\\src\\test\\resources\\filesforupload\\minion.jpg"},
+                {"D:\\Repositories\\webUI-automation-project\\demoqa-webUI-automation-project\\src\\test\\resources\\filesforupload\\Postman-win64-8.8.0-Setup.exe"}
 
         };
     }

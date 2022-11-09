@@ -25,7 +25,9 @@ public class Methods {
     By title = By.className("main-header");
 
     public WebElement element(By locator) {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].style.border='3px solid red'", element);
+        return element;
     }
 
     public List<WebElement> elements(By locator) {
@@ -241,11 +243,6 @@ public class Methods {
         actions.dragAndDropBy(elements(locator).get(index), x, y).build().perform();
     }
 
-    //Loader
-    public void loader(By locator) {
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
-    }
-
     public void uploadFileWithAutoIt(By locator, String path) throws InterruptedException, IOException {
         javaExecutorScrollIntoView(locator);
         moveToElement(locator);
@@ -253,6 +250,5 @@ public class Methods {
         Thread.sleep(5000);
         Runtime.getRuntime().exec(path);
     }
-
 }
 

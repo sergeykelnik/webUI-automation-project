@@ -9,42 +9,54 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ProfilePage extends Methods {
     By goToBookStoreButton = By.id("gotoStore");
-    By searchBox=By.id("searchBox");
-    By loggedInUsername =By.id("userName-value");
-    By addToCollection=By.id("addNewRecordButton");
-    By deleteBook=By.id("delete-record-undefined");
-    By button=By.id("submit");
-    By link=By.xpath("//*[@id=\"notLoggin-label\"]//a");
+    By searchBox = By.id("searchBox");
+    By loggedInUsername = By.id("userName-value");
+    By addToCollection = By.xpath("(//*[@id=\"addNewRecordButton\"])[2]");
+    By deleteBook = By.id("delete-record-undefined");
+    By button = By.id("submit");
+    By link = By.xpath("//*[@id=\"notLoggin-label\"]//a");
 
-    public ProfilePage(WebDriver driver,WebDriverWait wait, Actions actions){
-        super(driver,wait,actions);
+    public ProfilePage(WebDriver driver, WebDriverWait wait, Actions actions) {
+        super(driver, wait, actions);
     }
 
-    public void clickGoToBookStoreButton(){
-       javaExecutorScrollIntoView(goToBookStoreButton);
-       clickActions(goToBookStoreButton);
+    public void clickGoToBookStoreButton() {
+        javaExecutorScrollIntoView(goToBookStoreButton);
+        clickActions(goToBookStoreButton);
     }
-    public void writeBookToSearch(String book){
-        sendKeys(searchBox,book);
+
+    public void writeBookToSearch(String book) {
+        sendKeys(searchBox, book);
     }
-    public String getUsernameText(){
+
+    public String getUsernameText() {
         return getText(loggedInUsername);
     }
-    public void addBook(){
+
+    public void addBook() {
         javaExecutorScrollIntoView(addToCollection);
         click(addToCollection);
+        alertIsPresent();
+        acceptAlert();
     }
-    public void deleteChosenBook(int index){
-        clickWithIndex(deleteBook,index);
+
+    public void deleteChosenBook(int index) {
+        clickWithIndex(deleteBook, index);
     }
-    public void chooseActionToTake(String buttons){
-        int i=arrayListToInt(StaticVariables.CHOOSE_BUTTON, buttons);
+
+    public void chooseActionToTake(String buttons) {
+        int i = arrayListToInt(StaticVariables.CHOOSE_BUTTON, buttons);
         javaExecutorScrollIntoView(button);
-        clickWithIndex(button,i);
+        clickWithIndex(button, i);
     }
-    public void chooseLoginOrRegistration(String logOrRegister){
-        int i=arrayListToInt(StaticVariables.CHOOSE_LOGIN_REGISTER,logOrRegister);
+
+    public void chooseActionToClick(String button) {
+        click(By.xpath(String.format("//button[text()='%s']", button)));
+    }
+
+    public void chooseLoginOrRegistration(String logOrRegister) {
+        int i = arrayListToInt(StaticVariables.CHOOSE_LOGIN_REGISTER, logOrRegister);
         moveToElement(link);
-        clickActionsWithIndex(link,i);
+        clickActionsWithIndex(link, i);
     }
 }

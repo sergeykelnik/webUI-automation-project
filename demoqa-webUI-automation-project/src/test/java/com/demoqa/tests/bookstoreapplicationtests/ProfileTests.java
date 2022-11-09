@@ -1,46 +1,44 @@
 package com.demoqa.tests.bookstoreapplicationtests;
 
 import com.demoqa.tests.BaseTests;
+import org.testng.annotations.BeforeGroups;
 import org.testng.annotations.Test;
 
 public class ProfileTests extends BaseTests {
-    @Test
-    public void profilePageTests(){
+
+    @BeforeGroups("profile")
+    public void preconditionSteps(){
+        setup();
+        login();
+        profilePage.chooseActionToClick("Delete All Books");
+        modalDialogsPage.setOKSmallModal();
+        tear_down();
+    }
+
+    private void login() {
         homePage.chooseHomePageMenu("Book Store");
         bookStorePage.chooseBookStoreMenu("Profile");
-
-        /*  profilePage.chooseLoginOrRegistration("register");
-        loginPage.enterFirstName("Natasha");
-        loginPage.enterLastName("Kostovska");
-        loginPage.enterUsername("Nate123");
-        loginPage.enterPassword("12345Aa!");
-        loginPage.clickRegisterButton();*/
-
         profilePage.chooseLoginOrRegistration("login");
         loginPage.enterUsername("Nate25");
         loginPage.enterPassword("12345Aa!");
         bookStorePage.clickLoginButton();
+    }
+
+    @Test(groups = "profile")
+    public void profilePageTests(){
+        login();
         waitTime();
-        //Assert.assertEquals(profilePage.getUsernameText(),);
         profilePage.clickGoToBookStoreButton();
         bookStorePage.openBookByTitle("Git Pocket Guide");
         profilePage.addBook();
-        waitTime();//backtobookstore
+        waitTime();
         bookStorePage.clickBackToBookstore();
         bookStorePage.openBookByTitle("Learning JavaScript Design Patterns");
         profilePage.addBook();
         waitTime();
         bookStorePage.chooseBookStoreMenu("Profile");
         profilePage.writeBookToSearch("Learning JavaScript Design Patterns");
-        profilePage.deleteChosenBook(1);
-        methods.acceptAlert();
-        waitTime();
-        methods.acceptAlert();
-        waitTime();
-        profilePage.chooseActionToTake("Delete All Books");
-        waitTime();
-      //  profilePage.chooseActionToTake("Delete Account");
-
-
+        profilePage.deleteChosenBook(0);
+        modalDialogsPage.setOKSmallModal();
     }
 }

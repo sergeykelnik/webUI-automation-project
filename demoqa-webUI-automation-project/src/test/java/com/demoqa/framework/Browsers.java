@@ -1,5 +1,6 @@
 package com.demoqa.framework;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -11,45 +12,21 @@ import java.util.List;
 import java.util.Map;
 
 public class Browsers {
-    public WebDriver driver;
-    ChromeOptions options;
-
-    public WebDriver open(String browser) {
-        if (browser.equalsIgnoreCase("chrome")) {
-            System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
-            options = new ChromeOptions();
-            Map<String, Object> prefs = new HashMap<>();
-            prefs.put("profile.default_content_settings.popups", 0);
-            prefs.put("download.default_directory", "C:\\Users\\Natasha.Kostovska\\Downloads\\DemoQA");
-            options.setExperimentalOption("prefs", prefs);
-            options.setExperimentalOption("excludeSwitches",
-                    List.of("disable-popup-blocking"));
-            driver = new ChromeDriver(options);
-
-        } else if (browser.equalsIgnoreCase("firefox")) {
-            System.setProperty("webdriver.gecko.driver", "src/test/resources/drivers/geckodriver.exe");
-            driver = new FirefoxDriver();
-
-        } else if (browser.equalsIgnoreCase("msedge")) {
-            System.setProperty("webdriver.edge.driver", "src/test/resources/drivers/msedgedriver.exe");
-            driver = new EdgeDriver();
-        } else {
-            System.out.println("Browser unknown!");
-        }
-        return driver;
-    }
+    private WebDriver driver;
+    private ChromeOptions options;
 
     public WebDriver openWithSwitch(String browser) {
         switch (browser) {
             case "chrome": {
-                System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
                 options = new ChromeOptions();
                 Map<String, Object> prefs = new HashMap<>();
                 prefs.put("profile.default_content_settings.popups", 0);
-                prefs.put("download.default_directory", "C:\\Users\\Natasha.Kostovska\\Downloads\\DemoQA");
+                prefs.put("download.default_directory", "D:\\Downloads\\DemoQA");
+                options.addArguments("--headless");
                 options.setExperimentalOption("prefs", prefs);
                 options.setExperimentalOption("excludeSwitches",
                         List.of("disable-popup-blocking"));
+                WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver(options);
             }
             break;
@@ -57,7 +34,7 @@ public class Browsers {
                 System.setProperty("webdriver.gecko.driver", "src/test/resources/drivers/geckodriver.exe");
                 driver = new FirefoxDriver();
                 break;
-            case "msedge":
+            case "edge":
                 System.setProperty("webdriver.edge.driver", "src/test/resources/drivers/msedgedriver.exe");
                 driver = new EdgeDriver();
                 break;

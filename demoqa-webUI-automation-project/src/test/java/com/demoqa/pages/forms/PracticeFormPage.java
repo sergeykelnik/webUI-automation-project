@@ -73,7 +73,7 @@ public class PracticeFormPage extends Methods {
     public void chooseHobby(String hobby) {
         int i = arrayListToInt(StaticVariables.HOBBIES, hobby);
         moveToElement(hobbies);
-        clickActionsWithIndex(hobbies,i);
+        clickWithIndex(hobbies,i);
     }
 
     public void enterCurrentAddress(String currentAddress) {

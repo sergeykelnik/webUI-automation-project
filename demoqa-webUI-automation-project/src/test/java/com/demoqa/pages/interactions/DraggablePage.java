@@ -25,7 +25,7 @@ public class DraggablePage extends Methods {
 
     public void chooseDraggableMenuItem(String dragabbleMenuItem) {
         int i = arrayListToInt(StaticVariables.DRAGABBLE_MENU, dragabbleMenuItem);
-        clickActionsWithIndex(menuItems,i);
+        clickWithIndex(menuItems,i);
     }
 
     public void dragMeAction(int x, int y) {

@@ -20,5 +20,4 @@ public class HomePage extends Methods {
         javaExecutorScrollIntoView(clickHomePageItem);
         clickWithIndex(clickHomePageItem,indexOfElement);
     }
-
 }

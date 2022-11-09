@@ -8,34 +8,43 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ModalDialogsPage extends Methods {
 
-    By smallModalButton= By.id("showSmallModal");
-    By largeModalButton=By.id("showLargeModal");
-    By smallResponse=By.id("example-modal-sizes-title-sm");
-    By largeResponse=By.id("example-modal-sizes-title-lg");
-    By closeSmallModal=By.id("closeSmallModal");
-    By closeLargeModal=By.id("closeLargeModal");
+    By smallModalButton = By.id("showSmallModal");
+    By largeModalButton = By.id("showLargeModal");
+    By smallResponse = By.id("example-modal-sizes-title-sm");
+    By largeResponse = By.id("example-modal-sizes-title-lg");
+    By closeSmallModal = By.id("closeSmallModal");
+    By closeLargeModal = By.id("closeLargeModal");
+    By okSmallModal = By.id("closeSmallModal-ok");
 
-    public ModalDialogsPage(WebDriver driver, WebDriverWait wait, Actions actions){
-      super(driver,wait,actions);
+    public ModalDialogsPage(WebDriver driver, WebDriverWait wait, Actions actions) {
+        super(driver, wait, actions);
     }
 
-    public void clickSmallModal(){
+    public void clickSmallModal() {
         click(smallModalButton);
     }
-    public void clickLargeModal(){
+
+    public void clickLargeModal() {
         click(largeModalButton);
     }
-    public void clickCloseSmallModal()
-    {
+
+    public void clickCloseSmallModal() {
         click(closeSmallModal);
     }
-    public String smallModalResponse(){
+
+    public String smallModalResponse() {
         return getText(smallResponse);
     }
-    public String largeModalResponse(){
+
+    public String largeModalResponse() {
         return getText(largeResponse);
     }
-    public void clickCloseLargeModal(){
+
+    public void clickCloseLargeModal() {
         click(closeLargeModal);
+    }
+
+    public void setOKSmallModal() {
+        click(okSmallModal);
     }
 }

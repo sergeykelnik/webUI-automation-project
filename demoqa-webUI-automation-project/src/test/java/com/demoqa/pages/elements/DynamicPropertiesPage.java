@@ -9,16 +9,19 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class DynamicPropertiesPage extends Methods {
 
     public DynamicPropertiesPage(WebDriver driver, WebDriverWait wait, Actions actions) {
-       super(driver,wait,actions);
+        super(driver, wait, actions);
     }
 
-    By buttons= By.xpath("//*[contains(@class,\"btn-primary\")]");
-    By text=By.xpath("//*[contains(text(),\"This text has random Id\")]");
+    By buttons = By.xpath("//*[contains(@class,\"btn-primary\")]");
+    By text = By.xpath("//*[contains(text(),\"This text has random Id\")]");
+    By visibleAfter = By.id("visibleAfter");
 
-    public void clickPage(int i){
-        clickWithIndex(buttons,i);
+    public void clickPage(int i) {
+        element(visibleAfter);
+        clickWithIndex(buttons, i);
     }
-    public String text(){
+
+    public String text() {
         return getText(text);
     }
 }

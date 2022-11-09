@@ -17,7 +17,7 @@ public class BookStorePage extends Methods {
     By searchBox = By.id("searchBox");
     By selectRows = By.tagName("select");
     By pages = By.xpath("//*[@type=\"number\"]");
-    By title = By.className("action-buttons");
+    By title = By.cssSelector("div.action-buttons > span > a");
     By backButton = By.id("addNewRecordButton");
     By next = By.xpath("//button[text()=\"Next\"]");
     By previous = By.xpath("//button[text()=\"Previous\"]");
@@ -45,7 +45,7 @@ public class BookStorePage extends Methods {
     public void openBookByTitle(String book) {//list of the books array
         int i =arrayListToInt(StaticVariables.BOOKS_LIST, book);
         javaExecutorScrollIntoView(title);
-        clickActionsWithIndex(title,i);
+        clickWithIndex(title,i);
     }
 
     public void clickBackToBookstore() {

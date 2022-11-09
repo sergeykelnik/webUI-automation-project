@@ -29,7 +29,7 @@ public class DroppablePage extends Methods {
 
     public void chooseDroppableMenu(String droppableMenuList) {
         int i = arrayListToInt(StaticVariables.DROPPABLE_MENU, droppableMenuList);
-        clickActionsWithIndex(menuItems,i);
+        clickWithIndex(menuItems,i);
     }
     public void simple() {
         dragAndDropElement(dragMe,dropHere);

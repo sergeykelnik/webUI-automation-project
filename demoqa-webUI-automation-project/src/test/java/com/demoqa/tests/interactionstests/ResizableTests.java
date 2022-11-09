@@ -10,7 +10,7 @@ public class ResizableTests extends BaseTests {
         waitTime();
         sortablePage.chooseInteractionsMenu("Resizable");
         waitTime();
-        resizablePage.resizableClick(1, 416,369);
+        resizablePage.resizableClick(1, 150,150);
     }
     @Test
     public void firstElementResizableTest(){

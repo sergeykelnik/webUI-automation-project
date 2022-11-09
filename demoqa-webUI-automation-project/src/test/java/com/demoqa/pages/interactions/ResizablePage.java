@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ResizablePage extends Methods {
 
-    By resize = By.xpath("//*[contains(@class,\"react-resizable-handle\")]");
+    By resize = By.className("react-resizable-handle");
 
     public ResizablePage(WebDriver driver, WebDriverWait wait, Actions actions) {
         super(driver, wait, actions);

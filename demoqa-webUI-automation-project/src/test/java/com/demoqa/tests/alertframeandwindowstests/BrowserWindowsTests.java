@@ -33,7 +33,6 @@ public class BrowserWindowsTests extends BaseTests {
         browserWindowPage.click_new_window();
         waitTime();
         methods.switch_to_window(methods.get_all_tabs(), 1);
-        driver.manage().window().maximize();
         Assert.assertEquals(browserWindowPage.returnNewWindowTitle(), "This is a sample page");
         waitTime();
         methods.switch_to_window(methods.get_all_tabs(), 0);
