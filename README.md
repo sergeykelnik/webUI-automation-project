@@ -1,4 +1,4 @@
-# demoqa-webUI-automation-project
+# WebUI-automation-project
 
 ## Automation testing on demoqa.com page (Page Object Model)
 
