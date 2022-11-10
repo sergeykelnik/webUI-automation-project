@@ -23,7 +23,7 @@ steps:
     path: $(MAVEN_CACHE_FOLDER)
   displayName: Cache Maven local repo
 
-- script: mvn install -B -e
+- script: mvn install -B -e -DsuiteXmlFile="src/test/resources/tests/empty.xml"
 
 - task: Maven@3
   inputs:
