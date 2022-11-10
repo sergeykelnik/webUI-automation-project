@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="Alerts Test">
+<suite name="Alerts Test" parallel="classes" thread-count="2">
     <listeners>
         <listener class-name="com.demoqa.framework.AnnotationTransformer"/>
         <listener class-name="com.demoqa.framework.ScreenShotMaker"/>
     </listeners>
     <test name="Alerts">
         <classes>
-            <class name="com.demoqa.tests.alertframeandwindowstests.BrowserWindowsTests">
-            </class>
+            <class name="com.demoqa.tests.alertframeandwindowstests.BrowserWindowsTests"/>
             <class name="com.demoqa.tests.alertframeandwindowstests.AlertsTests"/>
-            <class name="com.demoqa.tests.alertframeandwindowstests.FramesTests">
-            </class>
+            <class name="com.demoqa.tests.alertframeandwindowstests.FramesTests"/>
             <class name="com.demoqa.tests.alertframeandwindowstests.NestedFramesTests"/>
             <class name="com.demoqa.tests.alertframeandwindowstests.ModalDialogsTests"/>
         </classes>

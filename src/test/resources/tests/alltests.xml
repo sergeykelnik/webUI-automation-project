@@ -1,13 +1,54 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="All Tests">
+<suite name="All Tests" parallel="tests" thread-count="5">
     <listeners>
         <listener class-name="com.demoqa.framework.AnnotationTransformer"/>
         <listener class-name="com.demoqa.framework.ScreenShotMaker"/>
     </listeners>
-    <test name="WebUI">
-        <packages>
-            <package name="com.demoqa.tests.*"/> <!-- .* wild card all subpackages >-->
-        </packages>
+    <test name="Alerts">
+        <classes>
+            <class name="com.demoqa.tests.alertframeandwindowstests.BrowserWindowsTests"/>
+            <class name="com.demoqa.tests.alertframeandwindowstests.AlertsTests"/>
+            <class name="com.demoqa.tests.alertframeandwindowstests.FramesTests"/>
+            <class name="com.demoqa.tests.alertframeandwindowstests.NestedFramesTests"/>
+            <class name="com.demoqa.tests.alertframeandwindowstests.ModalDialogsTests"/>
+        </classes>
+    </test>
+    <test name="Elements">
+        <classes>
+            <class name="com.demoqa.tests.dataproviders.TextBoxPageDataProviderTests"/>
+            <class name="com.demoqa.tests.dataproviders.LinksPageDataProviderTests"/>
+            <class name="com.demoqa.tests.dataproviders.UploadAndDownloadDataProviderTests"/>
+            <class name="com.demoqa.tests.dataproviders.CheckBoxPageDataProviderTests"/>
+            <class name="com.demoqa.tests.elementstests.CheckBoxTests"/>
+            <class name="com.demoqa.tests.elementstests.RadioButtonTests"/>
+            <class name="com.demoqa.tests.elementstests.WebTablesTests"/>
+            <class name="com.demoqa.tests.elementstests.ButtonsTests"/>
+            <class name="com.demoqa.tests.elementstests.BrokenLinksTests"/>
+            <class name="com.demoqa.tests.elementstests.UploadAndDownloadTests"/>
+            <class name="com.demoqa.tests.elementstests.TextBoxTests"/>
+            <class name="com.demoqa.tests.elementstests.DynamicPropertiesTests"/>
+        </classes>
+    </test>
+    <test name="Interactions">
+        <classes>
+            <class name="com.demoqa.tests.interactionstests.SortableTests"/>
+            <class name="com.demoqa.tests.interactionstests.SelectableTests"/>
+            <class name="com.demoqa.tests.interactionstests.ResizableTests"/>
+            <class name="com.demoqa.tests.dataproviders.DroppableDataProviderTests"/>
+            <class name="com.demoqa.tests.interactionstests.DroppableTests"/>
+            <class name="com.demoqa.tests.interactionstests.DraggableTests"/>
+        </classes>
+    </test>
+    <test name="Widgets">
+        <classes>
+            <class name="com.demoqa.tests.dataproviders.AccordianPageDataProviderTests"/>
+            <class name="com.demoqa.tests.widgetstests.AutoCompleteTests"/>
+            <class name="com.demoqa.tests.widgetstests.DatePickerTests"/>
+            <class name="com.demoqa.tests.widgetstests.SliderTests"/>
+            <class name="com.demoqa.tests.widgetstests.ProgressBarTests"/>
+            <class name="com.demoqa.tests.widgetstests.TabsTests"/>
+            <class name="com.demoqa.tests.widgetstests.ToolTipsTests"/>
+        </classes>
     </test>
 </suite>

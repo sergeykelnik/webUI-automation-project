@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="Widgets Tests">
+<suite name="Widgets Tests" parallel="classes" thread-count="2">
     <listeners>
         <listener class-name="com.demoqa.framework.AnnotationTransformer"/>
         <listener class-name="com.demoqa.framework.ScreenShotMaker"/>
     </listeners>
     <test name="Widgets">
         <classes>
-            <class name="com.demoqa.tests.dataproviders.AccordianPageDataProviderTests">
-            </class>
+            <class name="com.demoqa.tests.dataproviders.AccordianPageDataProviderTests"/>
             <class name="com.demoqa.tests.widgetstests.AutoCompleteTests"/>
-            <class name="com.demoqa.tests.widgetstests.DatePickerTests">
-            </class>
+            <class name="com.demoqa.tests.widgetstests.DatePickerTests"/>
             <class name="com.demoqa.tests.widgetstests.SliderTests"/>
             <class name="com.demoqa.tests.widgetstests.ProgressBarTests"/>
             <class name="com.demoqa.tests.widgetstests.TabsTests"/>
             <class name="com.demoqa.tests.widgetstests.ToolTipsTests"/>
-
         </classes>
     </test>
 </suite>
