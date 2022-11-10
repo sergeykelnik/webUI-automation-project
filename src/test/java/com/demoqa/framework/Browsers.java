@@ -8,7 +8,6 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class Browsers {
@@ -25,7 +24,7 @@ public class Browsers {
                 options.addArguments("--headless");
                 options.setExperimentalOption("prefs", prefs);
                 options.setExperimentalOption("excludeSwitches",
-                        List.of("disable-popup-blocking"));
+                        "disable-popup-blocking");
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver(options);
             }
