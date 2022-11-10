@@ -24,9 +24,7 @@ public class CheckBoxPageDataProviderTests extends BaseTests {
         homePage.chooseHomePageMenu("Elements");
         buttonsPage.chooseElementsMenu("Check Box");
         checkBoxPage.expandAndCollapseAll(0);
-        waitTime();
         checkBoxPage.checkBoxElements(checkBox);
       //  Assert.assertEquals(checkBoxPage.result(),"You have selected : "+checkBoxPage.getResponse(0));
-
     }
 }

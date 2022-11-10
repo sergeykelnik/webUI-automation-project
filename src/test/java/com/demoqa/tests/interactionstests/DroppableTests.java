@@ -18,12 +18,9 @@ public class DroppableTests extends BaseTests {
     public void acceptMenuAcceptable() {
         homePage.chooseHomePageMenu("Interactions");
         sortablePage.chooseInteractionsMenu("Droppable");
-        waitTime();
         droppablePage.chooseDroppableMenu("Accept");
-        waitTime();
         droppablePage.acceptableDragAndDrop();
         Assert.assertEquals(droppablePage.getText(), "Dropped!");
-        waitTime();
         droppablePage.notAcceptableDragAndDrop();
     }
 
@@ -31,9 +28,7 @@ public class DroppableTests extends BaseTests {
     public void acceptMenuNotAcceptable() {
         homePage.chooseHomePageMenu("Interactions");
         sortablePage.chooseInteractionsMenu("Droppable");
-        waitTime();
         droppablePage.chooseDroppableMenu("Accept");
-        waitTime();
         droppablePage.notAcceptableDragAndDrop();
     }
 
@@ -41,9 +36,7 @@ public class DroppableTests extends BaseTests {
     public void preventPropogationMenuOuter() {
         homePage.chooseHomePageMenu("Interactions");
         sortablePage.chooseInteractionsMenu("Droppable");
-        waitTime();
         droppablePage.chooseDroppableMenu("Prevent Propogation");
-        waitTime();
         droppablePage.outerDroppable(1);
     }
 
@@ -51,9 +44,7 @@ public class DroppableTests extends BaseTests {
     public void preventPropogationMenuInner() {
         homePage.chooseHomePageMenu("Interactions");
         sortablePage.chooseInteractionsMenu("Droppable");
-        waitTime();
         droppablePage.chooseDroppableMenu("Prevent Propogation");
-        waitTime();
         droppablePage.innerDroppable(1);
     }
 
@@ -61,9 +52,7 @@ public class DroppableTests extends BaseTests {
     public void revertDraggableMenu() {
         homePage.chooseHomePageMenu("Interactions");
         sortablePage.chooseInteractionsMenu("Droppable");
-        waitTime();
         droppablePage.chooseDroppableMenu("Revert Draggable");
-        waitTime();
         droppablePage.willRevertDraggable();
         Assert.assertEquals(droppablePage.getText(), "Dropped!");
         droppablePage.notRevertDraggable();

@@ -9,11 +9,9 @@ public class TabsTests extends BaseTests {
     public void tabsPageTest() {
         homePage.chooseHomePageMenu("Widgets");
         accordianPage.chooseWidgetsMenu("Tabs");
-        Assert.assertEquals(tabsPage.getUnderTitle(),"Details about Lorem Ipsum");
+        Assert.assertEquals(tabsPage.getUnderTitle(), "Details about Lorem Ipsum");
         tabsPage.chooseTab("Origin");
-        waitTime();
         tabsPage.chooseTab("Use");
-        waitTime();
         tabsPage.chooseTab("What");
     }
 }

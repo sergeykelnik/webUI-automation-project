@@ -18,14 +18,12 @@ public class TextBoxTests extends BaseTests {
 
         homePage.chooseHomePageMenu("Elements");
         buttonsPage.chooseElementsMenu("Text Box");
-        waitTime();
         Assert.assertEquals(methods.getTitleName(),"Text Box");
         textBoxPage.enterFullName(f1);
         textBoxPage.enterMail(eMail.toLowerCase(Locale.ROOT)+domain);
         textBoxPage.enterCAddress(cAdd);
         textBoxPage.enterPAddress(pAdd);
         textBoxPage.clickSubmit();
-        waitTime();
 
         Assert.assertEquals(textBoxPage.assertionResponse("Name"),"Name:"+f1);
         Assert.assertEquals(textBoxPage.assertionResponse("Email"),"Email:"+eMail+domain);

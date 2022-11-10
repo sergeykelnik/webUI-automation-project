@@ -11,12 +11,8 @@ public class DynamicPropertiesTests extends BaseTests {
         homePage.chooseHomePageMenu("Elements");
         buttonsPage.chooseElementsMenu("Dynamic Properties");
         Assert.assertEquals(dynamicPropertiesPage.text(),"This text has random Id");
-        waitTime();
         dynamicPropertiesPage.clickPage(0);
-        waitTime();
         dynamicPropertiesPage.clickPage(1);
-        waitTime();
         dynamicPropertiesPage.clickPage(2);
-        waitTime();
     }
 }

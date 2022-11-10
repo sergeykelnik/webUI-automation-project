@@ -6,13 +6,12 @@ import org.testng.annotations.Test;
 
 public class WebTablesTests extends BaseTests {
     @Test
-    public void webTablesTest(){
+    public void webTablesTest() {
         homePage.chooseHomePageMenu("Elements");
         buttonsPage.chooseElementsMenu("Web Tables");
-        Assert.assertEquals(methods.getTitleName(),"Web Tables");
+        Assert.assertEquals(methods.getTitleName(), "Web Tables");
         webTablesPage.clickAddButton();
-        waitTime();
-        Assert.assertEquals(webTablesPage.titleRegistrationForm(),"Registration Form");
+        Assert.assertEquals(webTablesPage.titleRegistrationForm(), "Registration Form");
         webTablesPage.enterFirstName("Natasha");
         webTablesPage.enterLastName("Kostovska");
         webTablesPage.enterEmail("nate@test.com");
@@ -20,7 +19,6 @@ public class WebTablesTests extends BaseTests {
         webTablesPage.enterSalary("10000");
         webTablesPage.enterDepartment("QA");
         webTablesPage.clickSubmit();
-        waitTime();
         webTablesPage.clickAddButton();
         webTablesPage.enterFirstName("Natash");
         webTablesPage.enterLastName("Kostovsk");
@@ -29,7 +27,6 @@ public class WebTablesTests extends BaseTests {
         webTablesPage.enterSalary("10000");
         webTablesPage.enterDepartment("QA");
         webTablesPage.clickSubmit();
-        waitTime();
         webTablesPage.clickAddButton();
         webTablesPage.enterFirstName("Natas");
         webTablesPage.enterLastName("Kostovs");
@@ -38,20 +35,13 @@ public class WebTablesTests extends BaseTests {
         webTablesPage.enterSalary("10000");
         webTablesPage.enterDepartment("QA");
         webTablesPage.clickSubmit();
-        waitTime();
         webTablesPage.selectRows("5");
         webTablesPage.enterPageNumber("1");
-        waitTime();
         webTablesPage.clickNextPage();
-        waitTime();
         webTablesPage.clickPreviousPage();
         webTablesPage.deleteEntryFromTable(1);
-        waitTime();
         webTablesPage.editEntryFromTable(0);
         webTablesPage.clickSubmit();
-        waitTime();
         webTablesPage.typeToSearch("Kierra");
-        waitTime();
-
     }
 }

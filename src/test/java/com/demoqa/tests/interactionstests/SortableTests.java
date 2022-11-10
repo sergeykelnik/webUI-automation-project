@@ -10,7 +10,6 @@ public class SortableTests extends BaseTests {
         homePage.chooseHomePageMenu("Interactions");
         sortablePage.chooseInteractionsMenu("Sortable");
         Assert.assertEquals(methods.getTitleName(),"Sortable");
-        waitTime();
         sortablePage.clickListOrGrid("List");
         sortablePage.sortElementsList("One",5);
         sortablePage.sortElementsList("Two",4);
@@ -20,10 +19,8 @@ public class SortableTests extends BaseTests {
         homePage.chooseHomePageMenu("Interactions");
         sortablePage.chooseInteractionsMenu("Sortable");
         Assert.assertEquals(methods.getTitleName(),"Sortable");
-        waitTime();
         sortablePage.clickListOrGrid("List");
         sortablePage.dragAndDropASCAndDESC(0);
-        waitTime();
         sortablePage.dragAndDropASCAndDESC(5);
     }
     @Test
@@ -31,7 +28,6 @@ public class SortableTests extends BaseTests {
         homePage.chooseHomePageMenu("Interactions");
         sortablePage.chooseInteractionsMenu("Sortable");
         Assert.assertEquals(methods.getTitleName(),"Sortable");
-        waitTime();
         sortablePage.clickListOrGrid("Grid");
         sortablePage.sortElementsGrid(0,5);
         sortablePage.sortElementsGrid(1,4);

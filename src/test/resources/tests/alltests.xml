@@ -3,6 +3,7 @@
 <suite name="All Tests">
     <listeners>
         <listener class-name="com.demoqa.framework.AnnotationTransformer"/>
+        <listener class-name="com.demoqa.framework.ScreenShotMaker"/>
     </listeners>
     <test name="WebUI">
         <packages>

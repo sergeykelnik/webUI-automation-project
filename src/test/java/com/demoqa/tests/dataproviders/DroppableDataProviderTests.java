@@ -16,10 +16,8 @@ public class DroppableDataProviderTests extends BaseTests {
     public void innerOuterPreventPropogation(int indexInner,int indexOutter){
         homePage.chooseHomePageMenu("Interactions");
         sortablePage.chooseInteractionsMenu("Droppable");
-        waitTime();
         droppablePage.chooseDroppableMenu("Prevent Propogation");
         droppablePage.innerDroppable(indexInner);
-        waitTime();
         droppablePage.outerDroppable(indexOutter);
     }
 }

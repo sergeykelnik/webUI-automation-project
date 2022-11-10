@@ -11,18 +11,12 @@ public class ButtonsTests extends BaseTests {
         homePage.chooseHomePageMenu("Elements");
         buttonsPage.chooseElementsMenu("Buttons");
         buttonsPage.clickClickMeButton();
-        waitTime();
         buttonsPage.doubleClickMeButton();
-        waitTime();
         buttonsPage.rightClickButton();
 
         Assert.assertEquals(methods.getTitleName(), "Buttons");
         Assert.assertEquals(buttonsPage.responseClickMe(), "You have done a dynamic click");
         Assert.assertEquals(buttonsPage.doubleClickResponse(), "You have done a double click");
-        Assert.assertEquals(buttonsPage.getRightClickResponse(),"You have done a right click");
-
+        Assert.assertEquals(buttonsPage.getRightClickResponse(), "You have done a right click");
     }
-
-
-
 }

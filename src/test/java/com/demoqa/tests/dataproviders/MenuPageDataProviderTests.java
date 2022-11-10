@@ -22,7 +22,6 @@ public class MenuPageDataProviderTests extends BaseTests {
         accordianPage.chooseWidgetsMenu("Menu");
         menuPage.hoverMenuItems(mainMenu);
         menuPage.hoverMainItem2(mainItem2);
-        waitTime();
         menuPage.hoverSubSubList(subSubList);
     }
 

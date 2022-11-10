@@ -7,16 +7,14 @@ import org.testng.annotations.Test;
 public class ModalDialogsTests extends BaseTests {
 
     @Test
-    public void modalDialogTest(){
+    public void modalDialogTest() {
         homePage.chooseHomePageMenu("Alerts, Frame & Windows");
         browserWindowPage.chooseAlertsMenu("Modal Dialogs");
         modalDialogsPage.clickSmallModal();
-        Assert.assertEquals(modalDialogsPage.smallModalResponse(),"Small Modal");
-        waitTime();
+        Assert.assertEquals(modalDialogsPage.smallModalResponse(), "Small Modal");
         modalDialogsPage.clickCloseSmallModal();
         modalDialogsPage.clickLargeModal();
-        Assert.assertEquals(modalDialogsPage.largeModalResponse(),"Large Modal");
-        waitTime();
+        Assert.assertEquals(modalDialogsPage.largeModalResponse(), "Large Modal");
         modalDialogsPage.clickCloseLargeModal();
     }
 }

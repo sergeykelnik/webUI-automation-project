@@ -22,7 +22,6 @@ public class LinksPageDataProviderTests extends BaseTests {
         homePage.chooseHomePageMenu("Elements");
         buttonsPage.chooseElementsMenu("Links");
         linksPage.clickLinks(links);
-        waitTime();
         Assert.assertEquals(linksPage.getTitles(0), "Following links will open new tab");
     }
 

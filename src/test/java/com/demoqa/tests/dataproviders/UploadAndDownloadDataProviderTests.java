@@ -23,6 +23,5 @@ public class UploadAndDownloadDataProviderTests extends BaseTests {
         buttonsPage.chooseElementsMenu("Upload and Download");
         Assert.assertEquals(methods.getTitleName(),"Upload and Download");
         uploadAndDownloadPage.clickChooseFile(fileToUpload);
-        waitTime();
     }
 }

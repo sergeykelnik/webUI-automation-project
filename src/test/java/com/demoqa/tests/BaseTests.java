@@ -1,6 +1,7 @@
 package com.demoqa.tests;
 
 import com.demoqa.framework.Browsers;
+import com.demoqa.framework.ScreenShotMaker;
 import com.demoqa.methods.Methods;
 import com.demoqa.pages.HomePage;
 import com.demoqa.pages.alertframeandwindows.*;
@@ -16,12 +17,15 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 
 import java.time.Duration;
 import java.util.Locale;
 
+@Listeners(ScreenShotMaker.class)
 public class BaseTests {
 
     private WebDriver driver;
@@ -70,15 +74,8 @@ public class BaseTests {
     public Faker faker;
     Actions actions;
 
-    public void waitTime() {
-        /*try {
-            Thread.sleep(1000);
-        } catch (Exception e) {
-        }*/
-    }
-
     @BeforeMethod
-    public void setup() {
+    public void setup(ITestContext context) {
         driver = browsers.openWithSwitch("chrome");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.manage().window().setSize(new Dimension(2560, 1440));
@@ -121,13 +118,12 @@ public class BaseTests {
         droppablePage = new DroppablePage(driver, wait, actions);
         draggablePage = new DraggablePage(driver, wait, actions);
         methods = new Methods(driver, wait, actions);
-        waitTime();
+        context.setAttribute("driver", driver);
         driver.get(URL);
     }
 
     @AfterMethod
     public void tear_down() {
-        waitTime();
         if (driver != null) {
             driver.quit();
         }

@@ -1,14 +1,15 @@
 package com.demoqa.tests.bookstoreapplicationtests;
 
 import com.demoqa.tests.BaseTests;
+import org.testng.ITestContext;
 import org.testng.annotations.BeforeGroups;
 import org.testng.annotations.Test;
 
 public class ProfileTests extends BaseTests {
 
     @BeforeGroups("profile")
-    public void preconditionSteps(){
-        setup();
+    public void preconditionSteps(ITestContext context) {
+        setup(context);
         login();
         profilePage.chooseActionToClick("Delete All Books");
         modalDialogsPage.setOKSmallModal();
@@ -25,17 +26,14 @@ public class ProfileTests extends BaseTests {
     }
 
     @Test(groups = "profile")
-    public void profilePageTests(){
+    public void profilePageTests() {
         login();
-        waitTime();
         profilePage.clickGoToBookStoreButton();
         bookStorePage.openBookByTitle("Git Pocket Guide");
         profilePage.addBook();
-        waitTime();
         bookStorePage.clickBackToBookstore();
         bookStorePage.openBookByTitle("Learning JavaScript Design Patterns");
         profilePage.addBook();
-        waitTime();
         bookStorePage.chooseBookStoreMenu("Profile");
         profilePage.writeBookToSearch("Learning JavaScript Design Patterns");
         profilePage.deleteChosenBook(0);

@@ -24,13 +24,11 @@ public class BookStoreDataProvider extends BaseTests {
         homePage.chooseHomePageMenu("Book Store");
         bookStorePage.chooseBookStoreMenu("Book Store");
         bookStorePage.openBookByTitle(title);
-        waitTime();
         bookStorePage.clickBackToBookstore();
         bookStorePage.select("5");
         bookStorePage.numberOfPages("2");
         bookStorePage.clickNextPage();
         bookStorePage.clickPreviousPage();
-        waitTime();
         bookStorePage.searchbox(title);
         bookStorePage.clickLoginButton();
     }

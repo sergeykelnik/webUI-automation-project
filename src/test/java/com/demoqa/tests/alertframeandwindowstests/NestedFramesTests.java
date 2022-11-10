@@ -12,7 +12,6 @@ public class NestedFramesTests extends BaseTests {
         browserWindowPage.chooseAlertsMenu("Nested Frames");
         nestedFramesPage.switchNestedFramesToChild();
         Assert.assertEquals(nestedFramesPage.getChildText(), "Child Iframe");
-        waitTime();
         methods.switchToMainWindow();
         Assert.assertEquals(nestedFramesPage.getMainText(), StaticVariables.nestedFrames);
     }

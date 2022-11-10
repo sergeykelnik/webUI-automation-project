@@ -8,7 +8,6 @@ public class ProgressBarTests extends BaseTests {
     public void progressBarPageTest(){
         homePage.chooseHomePageMenu("Widgets");
         accordianPage.chooseWidgetsMenu("Progress Bar");
-        waitTime();
         progressBarPage.clickProgressBar(100);
     }
 }

@@ -6,18 +6,15 @@ import org.testng.annotations.Test;
 
 public class ToolTipsTests extends BaseTests {
     @Test
-    public void toolTipsPageTest(){
+    public void toolTipsPageTest() {
         homePage.chooseHomePageMenu("Widgets");
         accordianPage.chooseWidgetsMenu("Tool Tips");
         toolTipsPage.hoverMeToSeeButton();
-        Assert.assertEquals(toolTipsPage.assertionHoverButtonText(),"Hover me to see");
-        waitTime();
+        Assert.assertEquals(toolTipsPage.assertionHoverButtonText(), "Hover me to see");
         toolTipsPage.hoverMeToSeeTextField();
-        waitTime();
         toolTipsPage.hoverTheChosenLink("Contrary");
-        Assert.assertEquals(toolTipsPage.assertionHoverLink(0),"Contrary");
-        waitTime();
+        Assert.assertEquals(toolTipsPage.assertionHoverLink(0), "Contrary");
         toolTipsPage.hoverTheChosenLink("1.10.32");
-        Assert.assertEquals(toolTipsPage.assertionHoverLink(1),"1.10.32");
+        Assert.assertEquals(toolTipsPage.assertionHoverLink(1), "1.10.32");
     }
 }

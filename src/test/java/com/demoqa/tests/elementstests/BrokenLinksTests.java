@@ -24,7 +24,6 @@ public class BrokenLinksTests extends BaseTests {
     public void clickValidLink(){
         homePage.chooseHomePageMenu("Elements");
         buttonsPage.chooseElementsMenu("Broken-Links Images");
-        waitTime();
         brokenLinks.clickLinks(0);
     }
 
@@ -32,7 +31,6 @@ public class BrokenLinksTests extends BaseTests {
     public void clickBrokenLink(){
         homePage.chooseHomePageMenu("Elements");
         buttonsPage.chooseElementsMenu("Broken-Links Images");
-        waitTime();
         brokenLinks.clickLinks(1);
         Assert.assertEquals(brokenLinks.brokenLinkResponse(),"This page returned a 500 status code.\n\nFor a definition and common list of HTTP status codes, go here");
     }
