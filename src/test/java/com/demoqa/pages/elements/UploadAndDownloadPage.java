@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
+
 public class UploadAndDownloadPage extends Methods {
 
     By download = By.id("downloadButton");
@@ -22,6 +24,6 @@ public class UploadAndDownloadPage extends Methods {
 
     public void clickChooseFile(String pathOfFile) {
         javaExecutorScrollIntoView(upload);
-        sendKeys(upload, pathOfFile);
+        sendKeys(upload, new File(pathOfFile).getAbsolutePath());
     }
 }

@@ -20,6 +20,7 @@ public class UploadAndDownloadTests extends BaseTests {
         homePage.chooseHomePageMenu("Elements");
         buttonsPage.chooseElementsMenu("Upload and Download");
         Assert.assertEquals(methods.getTitleName(), "Upload and Download");
-        uploadAndDownloadPage.clickChooseFile("D:\\Repositories\\webUI-automation-project\\src\\test\\resources\\filesforupload\\Nate.docx");
+        uploadAndDownloadPage.clickChooseFile("src/test/resources/filesforupload/Nate.docx");
+        System.out.println();
     }
 }
