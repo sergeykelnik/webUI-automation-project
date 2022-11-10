@@ -22,9 +22,8 @@ public class Browsers {
                 prefs.put("profile.default_content_settings.popups", 0);
                 prefs.put("download.default_directory", "D:\\Downloads\\DemoQA");
                 options.addArguments("--headless");
+                options.addArguments("disable-popup-blocking");
                 options.setExperimentalOption("prefs", prefs);
-                options.setExperimentalOption("excludeSwitches",
-                        "disable-popup-blocking");
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver(options);
             }
