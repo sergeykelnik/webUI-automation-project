@@ -1,4 +1,4 @@
-# WebUI-automation-project
+# WebUI-automation-project [![Build Status](https://dev.azure.com/sergeykelnik/Selenium/_apis/build/status/sergeykelnik.webUI-automation-project?branchName=master)](https://dev.azure.com/sergeykelnik/Selenium/_build/latest?definitionId=4&branchName=master)
 
 ## Automation testing on demoqa.com page (Page Object Model)
 
