@@ -6,7 +6,6 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
-import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;
 
@@ -18,9 +17,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.UUID;
 
-public class ScreenShotMaker extends TestListenerAdapter implements ITestListener {
+public class ScreenShotMaker extends TestListenerAdapter {
 
     private Path path;
 
@@ -29,13 +27,13 @@ public class ScreenShotMaker extends TestListenerAdapter implements ITestListene
         WebDriver driver = (WebDriver) result.getTestContext().getAttribute("driver");
         File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd_HH_mm_ss"));
+        Allure.addAttachment(result.getMethod().getMethodName() + timestamp, new ByteArrayInputStream(((TakesScreenshot) driver)
+                .getScreenshotAs(OutputType.BYTES)));
         try {
             FileUtils.copyFile(file, new File(String.format("%s/%s_%s.png", path, result.getName(), timestamp)));
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Allure.addAttachment(UUID.randomUUID().toString(), new ByteArrayInputStream(((TakesScreenshot) driver)
-                .getScreenshotAs(OutputType.BYTES)));
     }
 
     @Override
