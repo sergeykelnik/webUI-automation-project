@@ -7,8 +7,8 @@
     </listeners>
     <test name="Alerts">
         <classes>
-            <class name="com.demoqa.tests.alertframeandwindowstests.BrowserWindowsTests"/>
             <class name="com.demoqa.tests.alertframeandwindowstests.AlertsTests"/>
+            <class name="com.demoqa.tests.alertframeandwindowstests.BrowserWindowsTests"/>
             <class name="com.demoqa.tests.alertframeandwindowstests.FramesTests"/>
             <class name="com.demoqa.tests.alertframeandwindowstests.NestedFramesTests"/>
             <class name="com.demoqa.tests.alertframeandwindowstests.ModalDialogsTests"/>
