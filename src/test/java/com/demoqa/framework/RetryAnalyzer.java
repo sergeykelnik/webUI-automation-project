@@ -9,15 +9,9 @@ public class RetryAnalyzer implements IRetryAnalyzer {
 
     @Override
     public boolean retry(ITestResult result) {
-        switch (result.getStatus()) {
-            case ITestResult.SUCCESS:
-                return false;
-            case ITestResult.FAILURE:
-                if (retryCount < maxRetryCount) {
-                    result.setStatus(ITestResult.SKIP);
-                    retryCount++;
-                    return true;
-                }
+        if (retryCount < maxRetryCount) {
+            retryCount++;
+            return true;
         }
         return false;
     }

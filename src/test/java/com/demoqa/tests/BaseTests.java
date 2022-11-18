@@ -17,7 +17,6 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
@@ -28,13 +27,7 @@ import java.util.Locale;
 @Listeners(ScreenShotMaker.class)
 public class BaseTests {
 
-    private WebDriver driver;
-    private WebDriverWait wait;
-
     public static final String URL = "https://demoqa.com/";
-
-    Browsers browsers = new Browsers();
-
     public HomePage homePage;
     public ButtonsPage buttonsPage;
     public RadioButtonPage radioButtonPage;
@@ -69,13 +62,15 @@ public class BaseTests {
     public DroppablePage droppablePage;
     public DraggablePage draggablePage;
     public Methods methods;
-
     public Faker ukFaker;
     public Faker faker;
+    Browsers browsers = new Browsers();
     Actions actions;
+    private WebDriver driver;
+    private WebDriverWait wait;
 
     @BeforeMethod
-    public void setup(ITestContext context) {
+    public void setup() {
         driver = browsers.openWithSwitch("chrome");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.manage().window().setSize(new Dimension(2560, 1440));
@@ -118,8 +113,11 @@ public class BaseTests {
         droppablePage = new DroppablePage(driver, wait, actions);
         draggablePage = new DraggablePage(driver, wait, actions);
         methods = new Methods(driver, wait, actions);
-        context.setAttribute("driver", driver);
         driver.get(URL);
+    }
+
+    public WebDriver getDriver() {
+        return driver;
     }
 
     @AfterMethod
