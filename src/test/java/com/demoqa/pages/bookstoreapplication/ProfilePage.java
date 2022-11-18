@@ -2,6 +2,7 @@ package com.demoqa.pages.bookstoreapplication;
 
 import com.demoqa.methods.Methods;
 import com.demoqa.staticvariables.StaticVariables;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -20,19 +21,23 @@ public class ProfilePage extends Methods {
         super(driver, wait, actions);
     }
 
+    @Step
     public void clickGoToBookStoreButton() {
         javaExecutorScrollIntoView(goToBookStoreButton);
         clickActions(goToBookStoreButton);
     }
 
+    @Step
     public void writeBookToSearch(String book) {
         sendKeys(searchBox, book);
     }
 
+    @Step
     public String getUsernameText() {
         return getText(loggedInUsername);
     }
 
+    @Step
     public void addBook() {
         javaExecutorScrollIntoView(addToCollection);
         click(addToCollection);
@@ -40,20 +45,24 @@ public class ProfilePage extends Methods {
         acceptAlert();
     }
 
+    @Step
     public void deleteChosenBook(int index) {
         clickWithIndex(deleteBook, index);
     }
 
+    @Step
     public void chooseActionToTake(String buttons) {
         int i = arrayListToInt(StaticVariables.CHOOSE_BUTTON, buttons);
         javaExecutorScrollIntoView(button);
         clickWithIndex(button, i);
     }
 
+    @Step
     public void chooseActionToClick(String button) {
         click(By.xpath(String.format("//button[text()='%s']", button)));
     }
 
+    @Step
     public void chooseLoginOrRegistration(String logOrRegister) {
         int i = arrayListToInt(StaticVariables.CHOOSE_LOGIN_REGISTER, logOrRegister);
         moveToElement(link);

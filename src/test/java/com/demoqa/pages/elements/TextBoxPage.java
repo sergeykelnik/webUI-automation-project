@@ -2,6 +2,7 @@ package com.demoqa.pages.elements;
 
 import com.demoqa.methods.Methods;
 import com.demoqa.staticvariables.StaticVariables;
+import io.qameta.allure.Step;
 import org.apache.commons.lang3.ArrayUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -21,27 +22,33 @@ public class TextBoxPage extends Methods {
         super(driver, wait, actions);
     }
 
+    @Step
     public String assertionResponse(String response) {
         int i = ArrayUtils.indexOf(StaticVariables.RESPONSES, response);
         return getTexts(assertion, i);
     }
 
+    @Step
     public void enterFullName(String credentials) {
         sendKeys(fullName, credentials);
     }
 
+    @Step
     public void enterMail(String eMail) {
         sendKeys(mail, eMail);
     }
 
+    @Step
     public void enterCAddress(String address) {
         sendKeys(currentAddress, address);
     }
 
+    @Step
     public void enterPAddress(String address) {
         sendKeys(permanentAddress, address);
     }
 
+    @Step
     public void clickSubmit() {
         click(submit);
     }

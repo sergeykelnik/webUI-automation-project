@@ -2,6 +2,7 @@ package com.demoqa.pages.interactions;
 
 import com.demoqa.methods.Methods;
 import com.demoqa.staticvariables.StaticVariables;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -17,17 +18,20 @@ public class SortablePage extends Methods {
         super(driver, wait, actions);
     }
 
+    @Step
     public void chooseInteractionsMenu(String interactionsMenuList) {
         int i = arrayListToInt(StaticVariables.INTERACTIONS_MENU, interactionsMenuList);
         javaExecutorScrollIntoView(interactionsMenu);
         clickWithIndex(interactionsMenu, i);
     }
 
+    @Step
     public void clickListOrGrid(String chooseListOrGrid) {
         int i = arrayListToInt(StaticVariables.SORTABLE_MENU, chooseListOrGrid);
         clickWithIndex(listOrGrid, i);
     }
 
+    @Step
     public void sortElementsList(String number, int index) {
         int i = arrayListToInt(StaticVariables.LIST, number);
         javaExecutorScrollIntoView(list);
@@ -35,6 +39,7 @@ public class SortablePage extends Methods {
 
     }
 
+    @Step
     public void dragAndDropASCAndDESC(int index) {
         if (index == 0) {
             for (int j = 5; j >= 0; j--) {
@@ -47,6 +52,7 @@ public class SortablePage extends Methods {
         }
     }
 
+    @Step
     public void sortElementsGrid(int index, int index2) {
         javaExecutorScrollIntoView(grid);
         dragAndDropWebElements(grid, grid, index, index2);

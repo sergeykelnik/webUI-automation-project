@@ -2,6 +2,7 @@ package com.demoqa.pages.forms;
 
 import com.demoqa.methods.Methods;
 import com.demoqa.staticvariables.StaticVariables;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -33,27 +34,33 @@ public class PracticeFormPage extends Methods {
         super(driver, wait, actions);
     }
 
+    @Step
     public void clickPracticeForm() {
         click(item);
     }
 
+    @Step
     public void enterFirstName(String firstName) {
         sendKeys(fName, firstName);
     }
 
+    @Step
     public void enterLastName(String lastname) {
         sendKeys(lName, lastname);
     }
 
+    @Step
     public void gender(String gender) {
         int i = arrayListToInt(StaticVariables.GENDER, gender);
         clickWithIndex(genderOption, i);
     }
 
+    @Step
     public void enterEmail(String eMail) {
         sendKeys(email, eMail);
     }
 
+    @Step
     public void enterMobileNumber(String mobile) {
         if (mobile.length() == 10) {
             sendKeys(phoneNum, mobile);
@@ -62,51 +69,61 @@ public class PracticeFormPage extends Methods {
         }
     }
 
+    @Step
     public void dateOfBirth(String dob) {
-        dateSendKeys(date,dob);
+        dateSendKeys(date, dob);
     }
 
+    @Step
     public void enterSubjects(String subject) {
         sendKeysEnter(subjects, subject);
     }
 
+    @Step
     public void chooseHobby(String hobby) {
         int i = arrayListToInt(StaticVariables.HOBBIES, hobby);
         moveToElement(hobbies);
-        clickWithIndex(hobbies,i);
+        clickWithIndex(hobbies, i);
     }
 
+    @Step
     public void enterCurrentAddress(String currentAddress) {
-        sendKeysEnter(ca,currentAddress);
+        sendKeysEnter(ca, currentAddress);
     }
 
+    @Step
     public void submit() {
         moveToElement(submitButton);
         clickActions(submitButton);
     }
 
+    @Step
     public void uploadPicture(String path) throws IOException, InterruptedException {
-            uploadFileWithAutoIt(picture,path);
+        uploadFileWithAutoIt(picture, path);
     }
 
+    @Step
     public void state(String state) {
-        sendKeysEnter(states,state);
+        sendKeysEnter(states, state);
     }
 
+    @Step
     public void city(String city) {
-        sendKeysEnter(cities,city);
+        sendKeysEnter(cities, city);
     }
 
+    @Step
     public String response() {
         return getText(responseTitle);
     }
 
+    @Step
     public String getText(int i) {
-        return getTexts(assertionList,i);
+        return getTexts(assertionList, i);
     }
 
+    @Step
     public void clickClose() {
         click(close);
     }
-
 }

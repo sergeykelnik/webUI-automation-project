@@ -1,6 +1,7 @@
 package com.demoqa.pages.widgets;
 
 import com.demoqa.methods.Methods;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -18,28 +19,34 @@ public class SelectMenuPage extends Methods {
         super(driver, wait, actions);
     }
 
+    @Step
     public void oldStyleSelect(String color) {
         selectByVisibleText(oldStyle, color);
     }
 
+    @Step
     //same method select with index
     public void oldStyleSelectWithIndex(int index) {
         selectWithIndex(oldStyle, index);
     }
 
+    @Step
     //same method select by value
     public void oldStyleSelectWithValue(String value) {
         selectByValue(oldStyle, value);
     }
 
+    @Step
     public void multiSelectOptions() {
         getOptions(standard);
     }
 
+    @Step
     public void allSelectedOptions() {
         getAllSelectedOptions(standard);
     }
 
+    @Step
     public void standardMultiSelect(String car) {
         if (selectIsMultiple(standard)) {
             javaExecutorScrollIntoView(standard);
@@ -49,20 +56,27 @@ public class SelectMenuPage extends Methods {
         }
     }
 
+    @Step
     public void deselectStandardMultiSelect(String deselectCar) {
         deselectByValue(standard, deselectCar);
     }
 
+    @Step
     public void deselectAllStandardMultiSelect() {
         deselectAll(standard);
     }
 
-    public void multiSelectDropDown(String color) {sendKeysEnter(dropDown, color);}
+    @Step
+    public void multiSelectDropDown(String color) {
+        sendKeysEnter(dropDown, color);
+    }
 
+    @Step
     public void selectValue(String value) {
         sendKeysEnter(selectValue, value);
     }
 
+    @Step
     public void selectOne(String one) {
         sendKeysEnter(selectOne, one);
     }

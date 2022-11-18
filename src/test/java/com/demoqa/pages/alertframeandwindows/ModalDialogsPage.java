@@ -1,6 +1,7 @@
 package com.demoqa.pages.alertframeandwindows;
 
 import com.demoqa.methods.Methods;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -20,30 +21,37 @@ public class ModalDialogsPage extends Methods {
         super(driver, wait, actions);
     }
 
+    @Step
     public void clickSmallModal() {
         click(smallModalButton);
     }
 
+    @Step
     public void clickLargeModal() {
         click(largeModalButton);
     }
 
+    @Step
     public void clickCloseSmallModal() {
         click(closeSmallModal);
     }
 
+    @Step
     public String smallModalResponse() {
         return getText(smallResponse);
     }
 
+    @Step
     public String largeModalResponse() {
         return getText(largeResponse);
     }
 
+    @Step
     public void clickCloseLargeModal() {
         click(closeLargeModal);
     }
 
+    @Step
     public void setOKSmallModal() {
         click(okSmallModal);
     }

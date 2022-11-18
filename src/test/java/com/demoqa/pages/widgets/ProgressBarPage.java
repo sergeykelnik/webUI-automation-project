@@ -1,5 +1,6 @@
 package com.demoqa.pages.widgets;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,15 +22,14 @@ public class ProgressBarPage {
         this.actions = actions;
     }
 
+    @Step
     public void clickProgressBar(int enterValue) {
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(startStopResetButton));
         actions.click(element).perform();
         WebElement progress = wait.until(ExpectedConditions.visibilityOfElementLocated(progressBar));
         int width = progress.getSize().getWidth();
-        width = width/2;
+        width = width / 2;
         System.out.println(width);
-          actions.click(element).perform();
-
+        actions.click(element).perform();
     }
-
 }

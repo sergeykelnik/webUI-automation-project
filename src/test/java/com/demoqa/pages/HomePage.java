@@ -2,6 +2,7 @@ package com.demoqa.pages;
 
 import com.demoqa.methods.Methods;
 import com.demoqa.staticvariables.StaticVariables;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -15,9 +16,10 @@ public class HomePage extends Methods {
         super(driver, wait, actions);
     }
 
+    @Step
     public void chooseHomePageMenu(String homeMenu) {
         int indexOfElement = arrayListToInt(StaticVariables.HOME_MENU_ITEMS, homeMenu);
         javaExecutorScrollIntoView(clickHomePageItem);
-        clickWithIndex(clickHomePageItem,indexOfElement);
+        clickWithIndex(clickHomePageItem, indexOfElement);
     }
 }

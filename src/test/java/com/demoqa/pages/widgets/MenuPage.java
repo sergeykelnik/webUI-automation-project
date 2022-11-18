@@ -2,6 +2,7 @@ package com.demoqa.pages.widgets;
 
 import com.demoqa.methods.Methods;
 import com.demoqa.staticvariables.StaticVariables;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -16,16 +17,19 @@ public class MenuPage extends Methods {
         super(driver, wait, actions);
     }
 
+    @Step
     public void hoverMenuItems(String menuItem) {
         int i = arrayListToInt(StaticVariables.MAIN_ITEMS, menuItem);
         moveToElements(mainItems, i);
     }
 
+    @Step
     public void hoverMainItem2(String menuItem2) {
         int i = arrayListToInt(StaticVariables.MAIN_ITEM_2, menuItem2);
         moveToElements(mainItem2, i);
     }
 
+    @Step
     public void hoverSubSubList(String subItem) {
         int i = arrayListToInt(StaticVariables.SUB_SUB_LIST, subItem);
         moveToElements(subSubList, i);

@@ -1,6 +1,7 @@
 package com.demoqa.pages.widgets;
 
 import com.demoqa.methods.Methods;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -11,16 +12,16 @@ public class DatePickerPage extends Methods {
     By dateAndTime = By.id("dateAndTimePickerInput");
 
     public DatePickerPage(WebDriver driver, WebDriverWait wait, Actions actions) {
-        super(driver,wait,actions);
+        super(driver, wait, actions);
     }
 
+    @Step
     public void selectDate(String enterDate) {
-        dateSendKeys(date,enterDate);
+        dateSendKeys(date, enterDate);
     }
 
-    public void enterDateAndTime(String enterDateTime){
-        dateSendKeys(dateAndTime,enterDateTime);
+    @Step
+    public void enterDateAndTime(String enterDateTime) {
+        dateSendKeys(dateAndTime, enterDateTime);
     }
-
-
 }

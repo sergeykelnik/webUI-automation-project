@@ -1,6 +1,7 @@
 package com.demoqa.pages.widgets;
 
 import com.demoqa.methods.Methods;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -12,14 +13,16 @@ public class AutoCompletePage extends Methods {
     By autoSingle = By.id("autoCompleteSingleInput");
 
     public AutoCompletePage(WebDriver driver, WebDriverWait wait, Actions actions) {
-        super(driver,wait,actions);
+        super(driver, wait, actions);
     }
 
+    @Step
     public void enterAutoMultipleColors(String color) {
-        sendKeysEnter(autoMultiple,color);
+        sendKeysEnter(autoMultiple, color);
     }
 
+    @Step
     public void enterSingleColor(String color) {
-        sendKeysEnter(autoSingle,color);
+        sendKeysEnter(autoSingle, color);
     }
 }

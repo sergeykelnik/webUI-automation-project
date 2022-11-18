@@ -1,6 +1,7 @@
 package com.demoqa.pages.interactions;
 
 import com.demoqa.methods.Methods;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -14,14 +15,16 @@ public class ResizablePage extends Methods {
         super(driver, wait, actions);
     }
 
+    @Step
     public void resizableClick(int i, int width, int height) {
         javaExecutorScrollIntoView(resize);
         dragAndDropByOffsetWithIndex(resize, i, width, height);
     }
 
-    public void firstResize(int i,int width, int height) {
+    @Step
+    public void firstResize(int i, int width, int height) {
         javaExecutorScrollIntoView(resize);
-        dragAndDropByOffsetWithIndex(resize,i,width,height);
+        dragAndDropByOffsetWithIndex(resize, i, width, height);
         int max_width = 500, min_width = 150;
         int max_height = 300, min_height = 150;
         if (width < min_width || width > max_width) {

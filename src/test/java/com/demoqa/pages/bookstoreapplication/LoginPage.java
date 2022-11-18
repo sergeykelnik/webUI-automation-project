@@ -1,6 +1,7 @@
 package com.demoqa.pages.bookstoreapplication;
 
 import com.demoqa.methods.Methods;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -21,47 +22,62 @@ public class LoginPage extends Methods {
     By clickCaptcha = By.cssSelector("div.recaptcha-checkbox-checkmark");
 
     public LoginPage(WebDriver driver, WebDriverWait wait, Actions actions) {
-       super(driver,wait,actions);
+        super(driver, wait, actions);
     }
 
+    @Step
     public String getWelcomeText() {
         return getText(welcomeText);
     }
 
+    @Step
     public void enterUsername(String user) {
-        sendKeys(userName,user);
+        sendKeys(userName, user);
     }
 
     public void enterPassword(String pass) {
-        sendKeys(password,pass);
+        sendKeys(password, pass);
+        fakeStep();
     }
 
+    @Step("enterPassword")
+    private void fakeStep() {
+    }
+
+    @Step
     public void clickNewUserForRegistration() {
         click(newUserButton);
     }
 
+    @Step
     public String getRegisterText() {
         return getText(registerText);
     }
 
+    @Step
     public void enterFirstName(String firstname) {
-        sendKeys(firstName,firstname);
+        sendKeys(firstName, firstname);
     }
 
+    @Step
     public void enterLastName(String lastname) {
-        sendKeys(lastName,lastname);
+        sendKeys(lastName, lastname);
     }
 
+    @Step
     public void clickRegisterButton() {
         javaExecutorScrollIntoView(registerText);
         click(registerButton);
     }
 
+    @Step
     public void clickBackToLogin() {
         moveToElement(backToLoginButton);
         clickActions(backToLoginButton);
     }
-      public void hookForCaptcha(){
+
+    @Step
+    public void hookForCaptcha() {
         availableFrameAndSwitchToIt(captchaFrame);
         javaExecutorScrollIntoView(clickCaptcha);
         clickActions(clickCaptcha);

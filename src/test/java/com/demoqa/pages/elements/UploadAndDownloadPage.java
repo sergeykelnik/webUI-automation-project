@@ -1,6 +1,7 @@
 package com.demoqa.pages.elements;
 
 import com.demoqa.methods.Methods;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -17,11 +18,13 @@ public class UploadAndDownloadPage extends Methods {
         super(driver, wait, actions);
     }
 
+    @Step
     public void clickDownloadButton() {
         javaExecutorScrollIntoView(download);
         click(download);
     }
 
+    @Step
     public void clickChooseFile(String pathOfFile) {
         javaExecutorScrollIntoView(upload);
         sendKeys(upload, new File(pathOfFile).getAbsolutePath());

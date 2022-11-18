@@ -25,7 +25,7 @@ public class ScreenShotMaker extends TestListenerAdapter {
 
     @Override
     public void onTestFailure(ITestResult result) {
-        WebDriver driver = ((BaseTests)result.getInstance()).getDriver();
+        WebDriver driver = ((BaseTests) result.getInstance()).getDriver();
         File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd_HH_mm_ss"));
         Allure.addAttachment(result.getMethod().getMethodName() + timestamp, new ByteArrayInputStream(((TakesScreenshot) driver)

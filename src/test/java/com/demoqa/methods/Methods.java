@@ -15,14 +15,13 @@ public class Methods {
     WebDriver driver;
     WebDriverWait wait;
     Actions actions;
+    By title = By.className("main-header");
 
     public Methods(WebDriver driver, WebDriverWait wait, Actions actions) {
         this.driver = driver;
         this.wait = wait;
         this.actions = actions;
     }
-
-    By title = By.className("main-header");
 
     public WebElement element(By locator) {
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
@@ -251,4 +250,3 @@ public class Methods {
         Runtime.getRuntime().exec(path);
     }
 }
-
