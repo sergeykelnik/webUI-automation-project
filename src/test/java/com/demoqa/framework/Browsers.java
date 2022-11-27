@@ -1,6 +1,5 @@
 package com.demoqa.framework;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -24,16 +23,13 @@ public class Browsers {
                 options.addArguments("--headless");
                 options.addArguments("disable-popup-blocking");
                 options.setExperimentalOption("prefs", prefs);
-                WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver(options);
             }
             break;
             case "firefox":
-                System.setProperty("webdriver.gecko.driver", "src/test/resources/drivers/geckodriver.exe");
                 driver = new FirefoxDriver();
                 break;
             case "edge":
-                System.setProperty("webdriver.edge.driver", "src/test/resources/drivers/msedgedriver.exe");
                 driver = new EdgeDriver();
                 break;
             default:
